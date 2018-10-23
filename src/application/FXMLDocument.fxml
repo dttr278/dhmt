@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane minHeight="-Infinity" minWidth="-Infinity"
+	prefHeight="630.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE"
+	xmlns="http://javafx.com/javafx/9.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.FXMLDocumentController">
+	<tabs>
+		<Tab text="    2D    ">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="601.0" prefWidth="845.0">
+					<children>
+						<BorderPane layoutX="-2.0" layoutY="-1.0"
+							prefHeight="600.0" prefWidth="800.0">
+							<left>
+								<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0"
+									style="-fx-background-color: #999;"
+									BorderPane.alignment="CENTER">
+									<children>
+										<ToggleButton fx:id="tbtnLine"
+											mnemonicParsing="false" prefWidth="130.0" text="Line">
+											<toggleGroup>
+												<ToggleGroup fx:id="shapeGroup" />
+											</toggleGroup>
+										</ToggleButton>
+										<ToggleButton fx:id="tbtnRect"
+											mnemonicParsing="false" prefWidth="130.0" text="Rectage"
+											toggleGroup="$shapeGroup" />
+										<ToggleButton fx:id="tbtnSquare"
+											mnemonicParsing="false" prefWidth="130.0" text="Square"
+											toggleGroup="$shapeGroup" />
+										<ToggleButton fx:id="tbtnCircle"
+											mnemonicParsing="false" prefWidth="130.0" text="Circle"
+											toggleGroup="$shapeGroup" />
+										<ToggleButton fx:id="tbtnEllipse"
+											mnemonicParsing="false" prefWidth="130.0" text="Ellipse"
+											toggleGroup="$shapeGroup" />
+										<Label text="Animation" />
+										<ToggleButton fx:id="tbtnBall"
+											mnemonicParsing="false" prefWidth="130.0" text="Ball"
+											toggleGroup="$shapeGroup" />
+										<ToggleButton fx:id="tbtnBall1"
+											mnemonicParsing="false" prefWidth="130.0" text="Ball1"
+											toggleGroup="$shapeGroup" />
+										<ToggleButton fx:id="tbtnBall2"
+											mnemonicParsing="false" prefWidth="130.0" text="Ball2"
+											toggleGroup="$shapeGroup" />
+										<Label text="Hệ tọa độ" />
+										<ToggleButton fx:id="tbtnChonO"
+											mnemonicParsing="false" prefWidth="130.0" text="Chọn O"
+											toggleGroup="$shapeGroup">
+											<VBox.margin>
+												<Insets />
+											</VBox.margin>
+										</ToggleButton>
+										<Label text="Line color" />
+										<ColorPicker fx:id="clpicLine" />
+										<Label text="Fill color" />
+										<ColorPicker fx:id="clpicFill" />
+										<VBox alignment="BOTTOM_CENTER" prefHeight="165.0"
+											prefWidth="90.0" spacing="10.0">
+											<children>
+												<Button fx:id="btnBack" mnemonicParsing="false"
+													prefWidth="130.0" text="Back" />
+												<Button fx:id="btnClear" alignment="BOTTOM_CENTER"
+													mnemonicParsing="false" prefWidth="130.0" text="Clear" />
+											</children>
+											<padding>
+												<Insets bottom="10.0" left="10.0" right="10.0"
+													top="10.0" />
+											</padding>
+										</VBox>
+									</children>
+									<padding>
+										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+									</padding>
+								</VBox>
+							</left>
+							<center>
+								<StackPane fx:id="cvStack" prefHeight="600.0"
+									prefWidth="700.0"
+									style="-fx-border-style: solid; -fx-background-color: azure;"
+									BorderPane.alignment="CENTER">
+									<children>
+										<Canvas fx:id="cv" height="600.0" width="700.0" />
+									</children>
+								</StackPane>
+							</center>
+							<right>
+								<VBox prefHeight="602.0" prefWidth="198.0"
+									BorderPane.alignment="CENTER">
+									<children>
+										<ListView fx:id="lvBienDoi" prefHeight="490.0"
+											prefWidth="198.0" />
+										<GridPane alignment="CENTER" hgap="10.0" vgap="10.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES"
+													minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints hgrow="SOMETIMES"
+													minWidth="10.0" prefWidth="100.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0"
+													prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0"
+													prefHeight="30.0" vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0"
+													prefHeight="30.0" vgrow="SOMETIMES" />
+											</rowConstraints>
+											<children>
+												<Button fx:id="btnTT" alignment="CENTER"
+													contentDisplay="CENTER" mnemonicParsing="false"
+													text="Tịnh tiến" />
+												<Button fx:id="btnXoay" mnemonicParsing="false"
+													text="Xoay" GridPane.columnIndex="1" />
+												<Button fx:id="btnDX" mnemonicParsing="false"
+													text="Đối xứng " GridPane.rowIndex="1" />
+												<Button fx:id="btnDXDT" mnemonicParsing="false"
+													text="Đối xứng đt" GridPane.columnIndex="1"
+													GridPane.rowIndex="1" />
+												<Button fx:id="btnThuPhong" mnemonicParsing="false"
+													text="Thu phóng" GridPane.rowIndex="2" />
+												<Button fx:id="btnDel" mnemonicParsing="false"
+													text="Delete" GridPane.columnIndex="1"
+													GridPane.rowIndex="2" />
+											</children>
+											<padding>
+												<Insets bottom="10.0" left="10.0" right="10.0"
+													top="10.0" />
+											</padding>
+										</GridPane>
+									</children>
+								</VBox>
+							</right>
+						</BorderPane>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+		<Tab text="    3D    ">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<BorderPane layoutX="-2.0" layoutY="-1.0"
+							prefHeight="600.0" prefWidth="800.0">
+							<left>
+								<VBox alignment="TOP_CENTER" prefHeight="200.0"
+									prefWidth="100.0" spacing="5.0"
+									style="-fx-background-color: #999;"
+									BorderPane.alignment="BOTTOM_CENTER">
+									<padding>
+										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+									</padding>
+									<children>
+										<Button fx:id="btnHHCN" mnemonicParsing="false"
+											prefWidth="130.0" text="Hinh Hộp" />
+										<Button fx:id="btnHC" mnemonicParsing="false"
+											prefWidth="130.0" text="Hình chốp" />
+										<Button fx:id="btnClear1" mnemonicParsing="false"
+											prefWidth="130.0" text="Clear" />
+									</children>
+								</VBox>
+							</left>
+							<center>
+								<StackPane fx:id="cvStack1" prefHeight="600.0"
+									prefWidth="700.0"
+									style="-fx-border-style: solid; -fx-background-color: azure;"
+									BorderPane.alignment="CENTER">
+									<children>
+										<Canvas fx:id="cv1" height="600.0" width="700.0" />
+									</children>
+								</StackPane>
+							</center>
+							<right>
+								<TextArea fx:id="text3DTab" editable="false"
+									prefHeight="200.0" prefWidth="200.0"
+									BorderPane.alignment="CENTER" />
+							</right>
+						</BorderPane>
+					</children>
+				</AnchorPane>
+			</content>
+		</Tab>
+	</tabs>
+</TabPane>
